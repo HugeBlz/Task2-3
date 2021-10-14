@@ -4,7 +4,7 @@
 int main()
 {
     int row, col;
-    int i,j, m=1;
+    int i,j, m = 0;
     printf("Please enter the number of rows: ");
     scanf("%d",&row);
     printf("Please enter the number of columns: ");
@@ -21,7 +21,7 @@ int main()
     for (j = 0; j < col; ++j){
         for (i = 0; i < row; ++i){
             if(a[i][j] == 1){
-             if(m%2 != 0){
+             if(m%2 == 0){
                 printf("%d", i+1);
                 printf("--");
                 m++;
@@ -33,6 +33,10 @@ int main()
             }
         }
     }
-    printf("}");
+    printf("}\n");
+    if (j < i-1)
+        printf("Your graph is not connected");
+    else
+        printf("Your graph is connected");
     return 0;
 }
